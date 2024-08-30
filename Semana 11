@@ -1,0 +1,44 @@
+def bubble_sort(arr):
+    """Ordena una lista en orden ascendente usando el algoritmo Bubble Sort."""
+    n = len(arr)
+    for i in range(n):
+        # La última i posiciones están ordenadas
+        for j in range(0, n-i-1):
+            # Intercambia si el elemento encontrado es mayor que el siguiente elemento
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+
+def print_matrix(matrix):
+    """Imprime la matriz de forma legible."""
+    for row in matrix:
+        print(row)
+
+def sort_row(matrix, row_index):
+    """Ordena la fila especificada de la matriz usando Bubble Sort."""
+    if 0 <= row_index < len(matrix):
+        bubble_sort(matrix[row_index])
+    else:
+        print("Índice de fila fuera de rango")
+
+def main():
+    # Definimos la matriz 3x3
+    matrix = [
+        [3, 1, 4],
+        [1, 5, 9],
+        [2, 6, 5]
+    ]
+    
+    print("Matriz original:")
+    print_matrix(matrix)
+    
+    # Elegimos la fila que deseamos ordenar, por ejemplo, la segunda fila (índice 1)
+    row_to_sort = 1
+    
+    # Ordenamos la fila especificada
+    sort_row(matrix, row_to_sort)
+    
+    print("\nMatriz después de ordenar la fila:")
+    print_matrix(matrix)
+
+if __name__ == "__main__":
+    main()
