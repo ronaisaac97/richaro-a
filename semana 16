@@ -1,0 +1,17 @@
+# Escritura de Archivo de Texto
+# Crear un nuevo archivo llamado my_notes.txt
+with open('my_notes.txt', 'w') as file:
+    # Escribir al menos tres líneas de notas personales en el archivo
+    file.write("Nota 1: Estudiar Python es muy interesante.\n")
+    file.write("Nota 2: Practicar la lectura de archivos es esencial.\n")
+    file.write("Nota 3: Completar tareas a tiempo ayuda a mantener el ritmo.\n")
+
+# Lectura de Archivo de Texto
+# Abrir el archivo my_notes.txt
+with open('my_notes.txt', 'r') as file:
+    # Leer el contenido del archivo línea por línea
+    for line in file:
+        # Mostrar en la consola cada línea leída
+        print(line.strip())  # strip() elimina los espacios en blanco y saltos de línea
+
+# El archivo se cierra automáticamente al salir del bloque with
